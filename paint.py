@@ -36,7 +36,24 @@ def square(start, end):
 
 def circle(start, end):
     """Draw circle from start to end."""
-    pass # TODO
+    import turtle as t
+
+    r = ((end.x -start.x)**2 + (end.y - start.y)**2) ** 0.5
+    if r == 0:
+        return
+
+    up()
+    goto(start.x, start.y)
+
+    setheading(0)
+    up(); forward(r); left(90); down()
+
+    begin_fill()
+    t.circle(r)
+    end_fill()
+
+    up()
+    right(90); backward(r)
 
 def rectangle(start, end):
     """Draw rectangle form start to end."""
